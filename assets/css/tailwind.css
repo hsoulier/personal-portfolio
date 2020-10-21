@@ -58,10 +58,10 @@
 @tailwind components;
 @tailwind utilities;
 @layer utilities {
-    .text-stoke {
-        -webkit-text-stroke: 1px #f7fafc;
-        color: transparent;
-    }
+  .text-stroke {
+    -webkit-text-stroke: 1px #f7fafc;
+    color: transparent;
+  }
 }
 .debug {
   @apply border-solid border border-red-600;

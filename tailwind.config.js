@@ -281,6 +281,7 @@ module.exports = {
       '4xl': '2.25rem',
       '5xl': '3rem',
       '6xl': '4rem',
+      'title': '5vw'
     },
     fontWeight: {
       hairline: '100',
@@ -302,9 +303,12 @@ module.exports = {
     inset: {
       '0': '0',
       auto: 'auto',
+      full: '100%',
       '1/5': '20%',
+      '-1/5': '-20%',
       '2/5': '40%',
       '3/5': '60%',
+      '4/5': '80%',
       '1/2': '50%',
       '1/3': '33%',
       '2/3': '66%',
@@ -386,9 +390,11 @@ module.exports = {
     },
     opacity: {
       '0': '0',
+      '10': '0.1',
       '25': '0.25',
       '50': '0.5',
       '75': '0.75',
+      '85': '0.85',
       '100': '1',
     },
     order: {
@@ -632,6 +638,7 @@ module.exports = {
     translate: (theme, { negative }) => ({
       ...theme('spacing'),
       ...negative(theme('spacing')),
+      ...theme('inset'),
       '-full': '-100%',
       '-1/2': '-50%',
       '1/2': '50%',
