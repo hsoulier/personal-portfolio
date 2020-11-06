@@ -1,10 +1,10 @@
 <template>
-  <div class="px-8 lg:container mx-auto pb-16">
-    <h1 class="text-4xl font-extrabold uppercase mb-5">Qui suis-je ?</h1>
+  <div ref="about" class="about-page lg:container">
+    <h1 class="about-title">Qui suis-je ?</h1>
     <p class="mb-4">
       Un développeur alternant au CFA des Sciences/Sorbonne Univeristé orienté
       <b>Front-End</b> mais qui pratique également le Back-End. Ma soif
-      d'apprendre et de défis me motive à apprendre toujours plus de
+      de connaissance et de défis me motive à apprendre toujours plus de
       technologies.<br />
     </p>
     <p class="mb-4">
@@ -13,9 +13,9 @@
       par la suite mon framework favori pour sa simplicité <b>VueJS</b> 💚.
       <br />
     </p>
-    <div class="mb-8 flex flex-col md:flex-row justify-start gap-4 items-start">
+    <div class="skills">
       <p class="md:w-1/2 lg:w-1/3">
-        Je suis capable de développer avec les outils
+        <b>Je suis capable de développer avec les outils</b>
       <ul>
         <li>Javascript</li>
         <li>NodeJS</li>
@@ -25,48 +25,50 @@
         <li>React (en apprentissage)</li>
         <li>Java (en apprentissage)</li>
         <li>Symphony 4 (en apprentissage)</li>
-        <li>Python (Remise en jambe nécessaire)</li>
+        <li>Python 3 (Un peu rouillé)</li>
       </ul>
       </p>
       <p class="md:w-1/2 lg:w-1/3">
-        Je suis également capable d'utiliser 
+        <b>Je suis également capable d'utiliser</b> 
       <ul class="pt-2 mb-4">
-        <li>MySQL</li>
         <li>Git</li>
         <li>Apache 2</li>
         <li>Nginx</li>
+        <li>Bash/Shell</li>
+        <li>MySQL</li>
         <li>MongoDB (en apprentissage)</li>
       </ul>
-      Enfin je possède quelques compétences pour mettre en place un serveur Web de l'initialisation à la mise en production d'applications.
+      Enfin je possède les compétences nécessaires pour mettre en place entièrement un serveur Web sur un serveur dédié.
 
       </p>
     </div>
-    <a href="/cv-hippolyte-soulier.pdf" class="px-6 py-2 uppercase font-bold">Voir mon CV</a>
+    <a href="/cv-hippolyte-soulier.pdf" class="link-cv">Voir mon CV</a>
     <div class="mt-8">
-      <h1 class="text-4xl font-extrabold uppercase mb-5">Où me contacter ?</h1>
-    <div class="social inline-flex flex-wrap items-center text-center gap-4">
-      <a class="" href="mailto:hi.soulier@gmail.com"
-        ><mail-icon size="1.5x" class="custom-class"></mail-icon>
-        hi.soulier@gmail.com
-      </a>
-      <a href="https://github.com/hsoulier"
-        ><github-icon size="1.5x" class="custom-class"></github-icon>
-        /hsoulier
-      </a>
-      <a href="https://www.instagram.com/hippolyte.soulier/"
-        ><instagram-icon size="1.5x" class="custom-class"></instagram-icon>
-        /hippolyte.soulier
-      </a>
-      <a href="https://www.linkedin.com/in/hippolyte-soulier/"
-        ><linkedin-icon size="1.5x" class="custom-class"></linkedin-icon>
-        /hippolyte-soulier
-      </a>
-    </div>
+      <h2 class="mb-5">Où me contacter ?</h2>
+      <div class="social">
+        <a href="mailto:hi.soulier@gmail.com">
+          <mail-icon size="1.5x"></mail-icon>
+          hi.soulier@gmail.com
+        </a>
+        <a href="https://github.com/hsoulier">
+          <github-icon size="1.5x"></github-icon>
+          /hsoulier
+        </a>
+        <a href="https://www.instagram.com/hippolyte.soulier/">
+          <instagram-icon size="1.5x"></instagram-icon>
+          /hippolyte.soulier
+        </a>
+        <a href="https://www.linkedin.com/in/hippolyte-soulier/">
+          <linkedin-icon size="1.5x"></linkedin-icon>
+          /hippolyte-soulier
+        </a>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import gsap from 'gsap'
 import {
   GithubIcon,
   LinkedinIcon,
@@ -88,10 +90,47 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: 'Tous savoir sur mes compétences en tant que développeur Front-End javascript, VueJS et back-end avec nodeJS',
+          content:
+            'Tous savoir sur mes compétences en tant que développeur Front-End javascript, VueJS et back-end avec nodeJS',
         },
       ],
     }
+  },
+  mounted() {
+    const { about } = this.$refs
+    const tl = gsap.timeline()
+    tl.from(about.querySelector('.about-title'), {
+      x: -100,
+      opacity: 0,
+      duration: 0.8,
+    })
+      .from(
+        about.querySelectorAll('p'),
+        {
+          x: -100,
+          opacity: 0,
+          stagger: 0.2,
+        },
+        '-=0.5'
+      )
+      .from(
+        about.querySelector('.link-cv'),
+        {
+          opacity: 0,
+          duration: 0.4,
+        },
+        '-=.5'
+      )
+      .from(
+        about.querySelectorAll('.social a'),
+        {
+          y: 50,
+          opacity: 0,
+          duration: 0.5,
+          stagger: 0.15,
+        },
+        '-=0.8'
+      )
   },
 }
 </script>

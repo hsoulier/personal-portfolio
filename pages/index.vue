@@ -1,34 +1,25 @@
 <template>
-  <div
-    class="presentation flex flex-col md:flex-row gap-4 px-8 lg:container mx-auto justify-between md:items-start"
-  >
-    <div class="img-container w-full relative md:w-2/3">
-      <img
-        src="/hippolyte-soulier.jpg"
-        alt="Hippolyte Soulier"
-        class="h-full w-full object-contain md:object-cover md:bg-center"
-      />
-      <h1
-        class="leading-none md:leading-none absolute left-1/2 top-3/5 transform -translate-x-1/2 -translate-y-1/5 font-black"
-      >
+  <div class="presentation lg:container" ref="home">
+    <div class="img-container">
+      <img src="/hippolyte-soulier.jpg" alt="Hippolyte Soulier" />
+      <h1>
         hippolyte<br />
-        <span class="block text-transparent font-black uppercase tracking-wider"
-          >soulier</span
-        >
+        <span>soulier</span>
       </h1>
     </div>
-    <p class="py-1 px-3 w-full md:w-1/3 bg-yellow-500 text-gray-800">
+    <p class="presentation-text">
       <i class="font-light">Une petite présentation s'impose :</i><br />
       <span>
         Je suis un développeur alternant au CFA des Sciences/Sorbonne Univeristé
-        orienté Front-End à Paris. Ma soif d'apprendre et de défis me motive à
-        apprendre toujours plus de technologies.
+        orienté Front-End à Paris. Ma soif de connaissance et de défis me motive
+        à apprendre toujours plus de technologies.
       </span>
     </p>
   </div>
 </template>
 
 <script>
+import gsap from 'gsap'
 export default {
   name: 'index',
   head() {
@@ -43,6 +34,36 @@ export default {
         },
       ],
     }
+  },
+  mounted() {
+    const { home } = this.$refs
+    const tl = gsap.timeline({ repeat: false })
+    tl.from(home.querySelector('.img-container img'), {
+      x: -200,
+      opacity: 0,
+      duration: 0.7,
+      ease: 'power3.out',
+    })
+      .from(
+        home.querySelector('.img-container h1'),
+        {
+          x: -200,
+          opacity: 0,
+          duration: 0.5,
+          ease: 'power2.out',
+        },
+        '-=0.48'
+      )
+      .from(
+        home.querySelector('.presentation-text'),
+        {
+          x: 200,
+          opacity: 0,
+          duration: 0.8,
+          ease: 'power2.out',
+        },
+        '-=0.60'
+      )
   },
 }
 </script>
@@ -65,7 +86,6 @@ img {
   h1 {
     font-size: 5rem;
   }
-
   .img-container {
     height: 30rem;
   }
