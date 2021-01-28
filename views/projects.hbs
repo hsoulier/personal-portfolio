@@ -1,0 +1,26 @@
+<div class="swiper-container">
+  <div class="swiper-wrapper">
+    {{#each projects as |project|}}
+    <div class="swiper-slide">
+      <div class="swiper-slide-texts">
+        <h1>{{project.title}}</h1>
+        <h2>{{project.subtitle}}</h2>
+        <p>{{project.description}}</p>
+        <p>{{project.stack}}</p>
+        <a href="{{project.link}}" target="_blank" rel="noopener noreferrer">Voir le site</a>
+      </div>
+      <div class="swiper-slide-images">
+        <img src="/img/{{project.image}}" alt="{{project.title}}">
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  <div class="swiper-button">
+    <div class="swiper-button-prev">
+      <i data-feather="arrow-left"></i>
+    </div>
+    <div class="swiper-button-next">
+      <i data-feather="arrow-right"></i>
+    </div>
+  </div>
+</div>

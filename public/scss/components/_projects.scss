@@ -1,0 +1,65 @@
+.swiper {
+  $size: calc(100vw - 20vw);
+
+  &-container {
+    overflow-x: visible;
+  }
+
+  &-wrapper {
+    width: $size;
+  }
+
+  &-slide {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column-reverse;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+    }
+
+    img {
+      width: $size;
+      height: $size;
+      object-fit: cover;
+    }
+  }
+
+  &-button {
+    display: flex;
+    justify-content: space-between;
+    padding: .75rem;
+    background-color: rgba(233, 236, 239, 0.3);
+    box-shadow: 8px 8px 9px rgba(0, 0, 0, .16);
+    position: absolute;
+    width: 8rem;
+    top: $size;
+    z-index: 999;
+    left: 70%;
+    transform: translateY(-50%);
+    border-radius: 1rem;
+    backdrop-filter: blur(.75rem);
+
+    &-next,
+    &-prev {
+      width: 2.5rem;
+      height: 2.5rem;
+      padding: .5rem;
+      border-radius: .75rem;
+      position: static;
+      margin-top: 0;
+      color: $white;
+      background-color: $black;
+
+      &::after {
+        display: none;
+      }
+
+      &.swiper-button-disabled {
+        background-color: transparent;
+        color: $black;
+        opacity: .5;
+      }
+    }
+  }
+}

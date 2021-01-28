@@ -1,0 +1,118 @@
+.introduction {
+  $size: 20rem;
+
+  @media (min-width: 768px) {
+    margin-top: 3rem;
+    height: 50vmin;
+    min-height: 420px;
+    height: auto;
+  }
+
+  &__container {
+    height: 100%;
+    @media (min-width: 768px) {
+      display: flex;
+      justify-content: center;
+      column-gap: 3rem;
+    }
+  }
+
+  &__image {
+    position: relative;
+    height: $size;
+    width: $size;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, .16);
+    border-radius: .75rem;
+
+    @media (min-width: 769px) {
+      $sizeTablet: 28vmax;
+      width: $sizeTablet;
+      height: $sizeTablet;
+      flex-shrink: 0;
+      align-self: auto;
+      justify-self: auto;
+    }
+
+    img {
+      border-radius: .75rem;
+      opacity: .8;
+      position: absolute;
+      object-fit: cover;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__bonjour {
+    transform-origin: left top;
+    width: auto;
+    position: relative;
+    top: $size;
+    transform: translate(20%, -50%);
+    display: inline-block;
+    text-align: center;
+    font-size: 3.5rem;
+    padding: 1rem 2rem;
+    font-weight: 700;
+    background-color: rgba(233, 236, 239, 0.3);
+    box-shadow: 8px 8px 9px rgba(0, 0, 0, .16);
+    border-radius: 1.25rem;
+    backdrop-filter: blur(.75rem);
+
+    @media (min-width: 768px) {
+      top: 0;
+      transform: translate(75%, 15%);
+    }
+  }
+
+  &__description {
+    margin-top: 6rem;
+
+    @media (min-width: 768px) {
+      margin-top: 9rem;
+      width: 70%;
+      max-width: 550px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    h2 {
+      margin-top: 1rem;
+      font-weight: 500;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    p {
+      margin-bottom: 2rem;
+      font-size: 1.2rem;
+      font-weight: 300;
+
+      span {
+        font-style: italic;
+      }
+    }
+  }
+
+  &__cta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media (min-width: 768px) {
+      justify-content: flex-start;
+    }
+
+    a {
+      font-weight: 600;
+      font-size: 1.5rem;
+      width: auto;
+    }
+  }
+}

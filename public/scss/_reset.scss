@@ -1,0 +1,39 @@
+$black: #212529;
+$dark-gray:#222529;
+$white: #FFFFFF;
+$light-white: #F8F9FA;
+$light-gray: #656c74;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  min-height: 100vh;
+  font: 16px "Open Sans", sans-serif;
+  color: $black;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto minmax(70vh, 1fr) auto;
+}
+
+
+*[class*="container"] {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  @media (min-width: 768px) {
+    width: 85%;
+  }
+}
