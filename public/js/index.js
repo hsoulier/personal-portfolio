@@ -7688,10 +7688,12 @@
     console.log("Hello World");
     const page = {
       burger: document.querySelector(".nav__burger"),
+      contactForm: document.querySelector(".contact__form"),
     };
     const swiper = new Swiper(".swiper-container", {
       direction: "horizontal",
       slidesPerView: 1,
+      spaceBetween: 50,
       speed: 400,
       navigation: {
         nextEl: ".swiper-button-next",

@@ -1,5 +1,6 @@
 @import "./reset";
 @import "./components/navbar";
+@import "./components/modal";
 @import "./components/intro";
 @import "./components/contact";
 @import "./components/projects";
@@ -15,7 +16,7 @@
 }
 
 .footer {
-  font-weight: 700;
+  font-weight: 300;
   margin-top: 4rem;
   padding: 1.5rem 0;
   text-align: center;

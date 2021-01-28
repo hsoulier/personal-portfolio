@@ -3,6 +3,7 @@ $dark-gray:#222529;
 $white: #FFFFFF;
 $light-white: #F8F9FA;
 $light-gray: #656c74;
+$responsive: 950px;
 
 * {
   margin: 0;
@@ -19,6 +20,10 @@ ul {
   list-style: none;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   min-height: 100vh;
   font: 16px "Open Sans", sans-serif;
@@ -26,6 +31,7 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto minmax(70vh, 1fr) auto;
+  position: relative;
 }
 
 
@@ -33,7 +39,21 @@ body {
   width: 80%;
   margin-left: auto;
   margin-right: auto;
+
   @media (min-width: 768px) {
     width: 85%;
   }
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h2 {
+  margin-top: 1rem;
+  font-weight: 500;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
 }
