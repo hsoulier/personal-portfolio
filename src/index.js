@@ -8,6 +8,7 @@ const handleb = require("handlebars")
 const handlebars = require("express-handlebars")
 const mongoose = require("mongoose")
 const project = require("../controller/project")
+const user = require("../controller/user")
 const {
   allowInsecurePrototypeAccess,
 } = require("@handlebars/allow-prototype-access")
@@ -46,7 +47,7 @@ app.get("/", (req, res) => {
 app.post("/contact", (req, res) => {
   const contactMessage = JSON.parse(JSON.stringify(req.body))
   console.log(contactMessage)
-  res.render("home", {messageSended: true})
+  res.render("home", { messageSended: true })
 })
 
 app.get("/projets", async (req, res) => {
@@ -55,7 +56,14 @@ app.get("/projets", async (req, res) => {
 })
 
 app.get("/admin", (req, res) => {
-  res.render("admin")
+  res.render("login-admin")
+})
+
+app.post("/connect-admin", async (req, res) => {
+  console.log(req.body)
+  const admin = await user.findUser(req.body)
+  console.log(admin)
+  res.render("admin", { admin })
 })
 
 app.listen(port, () => console.log(`App listening on http://localhost:${port}`))

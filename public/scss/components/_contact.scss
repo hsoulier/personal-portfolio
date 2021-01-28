@@ -1,5 +1,4 @@
 .contact {
-  $gap: 1.5rem;
   margin-top: 8rem;
 
   &__container {
@@ -10,30 +9,6 @@
       display: flex;
       flex-direction: row-reverse;
       align-items: flex-start;
-    }
-  }
-
-  .form {
-    &-row {
-      display: flex;
-      flex-direction: column;
-      row-gap: $gap;
-
-      @media (min-width: $responsive) {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: flex-start;
-        column-gap: clamp(20px, 3vw, 3.5rem);
-      }
-    }
-
-    &-row-wide {
-      display: flex;
-      flex-direction: column;
-    }
-
-    &-field input {
-      width: 100%;
     }
   }
 
@@ -68,40 +43,5 @@
       max-width: 550px;
       flex-grow: 1;
     }
-
-    label {
-      font-weight: 700;
-      font-size: 1.5rem;
-    }
-
-    input,
-    textarea {
-      margin-top: .75rem;
-      padding: .75rem 1rem;
-      border-radius: .75rem;
-      border: 1px solid $dark-gray;
-      font-size: 1rem;
-      font-family: inherit;
-      font-weight: 400;
-      background-color: transparent;
-
-      &:focus {
-        outline: none;
-        border-width: 2px;
-      }
-    }
-
-    textarea {
-      display: block;
-      line-height: 1.5;
-      height: 12rem;
-      resize: vertical;
-    }
-  }
-
-  button {
-    cursor: pointer;
-    display: inline;
-    font-size: 1.25rem;
   }
 }
