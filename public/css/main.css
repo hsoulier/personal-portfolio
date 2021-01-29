@@ -112,6 +112,10 @@ button {
   font-size: 1.25rem;
 }
 
+:root {
+  --line-y: 0.35rem;
+}
+
 .nav {
   padding: 2rem 0;
 }
@@ -128,7 +132,9 @@ button {
 }
 
 .nav__burger {
+  cursor: pointer;
   position: relative;
+  z-index: 999;
   width: 1.5rem;
   padding: 1rem;
 }
@@ -143,12 +149,12 @@ button {
   transition: transform .3s ease-out;
 }
 
-.nav__burger .line:first-of-type {
-  transform: translateY(calc(-1 * 0.35rem));
+.nav__burger .line-1 {
+  transform: translateY(calc(-1 * var(--line-y)));
 }
 
-.nav__burger .line:last-of-type {
-  transform: translateY(0.35rem);
+.nav__burger .line-2 {
+  transform: translateY(var(--line-y));
 }
 
 .nav__burger.active .line:first-of-type {
@@ -166,12 +172,55 @@ button {
 }
 
 .nav__links {
-  display: none;
+  position: absolute;
+  background-color: #212529;
+  top: 1rem;
+  left: 0;
+  width: calc(100% - 1rem);
+  margin: .5rem;
+  height: calc(2 * .5rem + 4 * 2rem + 2 * 2rem + 2 * 1rem);
+  z-index: 998;
+  background-color: rgba(233, 236, 239, 0.3);
+  box-shadow: 8px 8px 9px rgba(0, 0, 0, 0.16);
+  border-radius: 1rem;
+  backdrop-filter: blur(0.75rem);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  opacity: 0;
+  pointer-events: none;
+}
+
+@media (max-width: 767px) {
+  .nav__links li {
+    display: flex;
+    border-radius: 0;
+    height: 2rem;
+    overflow-y: hidden;
+  }
+  .nav__links li a {
+    padding: .25rem 0;
+    transform: translateY(100%);
+  }
+  .nav__links .btn {
+    padding: 0;
+    background-color: transparent;
+    color: inherit;
+  }
 }
 
 @media (min-width: 769px) {
   .nav__links {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    box-shadow: none;
     display: inline-flex;
+    flex-direction: row;
     align-items: center;
     column-gap: 2rem;
     font-weight: 600;
@@ -180,7 +229,7 @@ button {
 
 @keyframes openMenuBot {
   0% {
-    transform: translateY(0.35rem);
+    transform: translateY(var(--line-y));
   }
   40% {
     transform: translateY(0);
@@ -192,7 +241,7 @@ button {
 
 @keyframes openMenuTop {
   0% {
-    transform: translateY(calc(-1 * 0.35rem));
+    transform: translateY(calc(-1 * var(--line-y)));
   }
   40% {
     transform: translateY(0);
@@ -292,10 +341,10 @@ button {
 
 .introduction__bonjour {
   transform-origin: left top;
-  width: auto;
+  width: 21rem;
   position: relative;
   top: 20rem;
-  transform: translate(20%, -50%);
+  transform: translate(10%, -50%);
   display: inline-block;
   text-align: center;
   font-size: 3.5rem;
@@ -352,6 +401,57 @@ button {
   font-weight: 600;
   font-size: 1.5rem;
   width: auto;
+}
+
+.about-me {
+  margin-top: 8rem;
+}
+
+.about-me h2 {
+  font-weight: 700;
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+.about-me__container {
+  display: flex;
+  justify-content: center;
+  column-gap: 2rem;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .about-me__container {
+    flex-direction: row;
+  }
+}
+
+.about-me__container > * {
+  width: clamp(20rem, 10vw, 32rem);
+}
+
+.about-me__container h3 {
+  font-size: 1.75rem;
+}
+
+.about-me__container p {
+  margin-top: 1rem;
+  font-weight: 300;
+}
+
+.about-me__container p span {
+  font-weight: 400;
+}
+
+.about-me__container p + p {
+  margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+  .about-me__container p + p {
+    margin-top: 0;
+  }
 }
 
 .contact {
