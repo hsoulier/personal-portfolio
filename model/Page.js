@@ -6,7 +6,7 @@ const pageSchema = new Schema({
     type: String,
     required: true,
   },
-  section: Object,
+  sections: Object,
 })
 
 module.exports = model("page", pageSchema)
