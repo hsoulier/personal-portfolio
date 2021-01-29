@@ -416,7 +416,7 @@ button {
 .about-me__container {
   display: flex;
   justify-content: center;
-  column-gap: 2rem;
+  row-gap: 2rem;
   align-items: flex-start;
   flex-direction: column;
 }
@@ -424,6 +424,8 @@ button {
 @media (min-width: 768px) {
   .about-me__container {
     flex-direction: row;
+    row-gap: 0;
+    column-gap: 2rem;
   }
 }
 
