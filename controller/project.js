@@ -1,6 +1,6 @@
 const Project = require("../model/Project")
 
-exports.getAll = () => {
-  const projects = Project.find({})
-  return projects
+exports.getAll = async (req, res) => {
+  const projects = await Project.find({})
+  res.render("projects", { projects })
 }

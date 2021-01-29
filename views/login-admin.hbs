@@ -1,4 +1,8 @@
-<form action="/connect-admin" method="post" class="form-admin">
+{{#if error}}
+<p class="modal error-login">Mauvais identifiants</p>
+{{/if}}
+
+<form action="/admin/connect" method="post" class="form-admin">
   <div class="form-row">
     <div class="form-field">
       <label for="name">Email</label>
