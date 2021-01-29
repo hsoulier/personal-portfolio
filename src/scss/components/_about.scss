@@ -1,0 +1,39 @@
+.about-me {
+  margin-top: 8rem;
+  h2 {
+    font-weight: 700;
+    text-align: center;
+    font-size: 2.5rem;
+  }
+  &__container {
+    display: flex;
+    justify-content: center;
+    row-gap: 2rem;
+    align-items: flex-start;
+    flex-direction: column;
+    @media (min-width: 768px) {
+      flex-direction: row;
+      row-gap: 0;
+      column-gap: 2rem;
+    }
+    & > * {
+      width: clamp(20rem, 10vw, 32rem);
+    }
+    h3 {
+      font-size: 1.75rem;
+    }
+    p {
+      margin-top: 1rem;
+      font-weight: 300;
+      span {
+        font-weight: 400;
+      }
+    }
+    p + p {
+      margin-top: 2rem;
+      @media (min-width: 768px) {
+        margin-top: 0;
+      }
+    }
+  }
+}
