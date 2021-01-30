@@ -8,8 +8,9 @@
   "scripts": {
     "dev": "nodemon index.js",
     "sass": "node-sass -w src/scss -o public/css --output-style expanded",
-    "start": "node src/index.js",
+    "start": "node index.js",
     "build:watch": "rollup -c -w",
+    "build": "rollup -c",
     "test": "nodemon src/test.js"
   },
   "dependencies": {
@@ -28,13 +29,15 @@
     "swiper": "^6.4.8"
   },
   "devDependencies": {
-    "nodemon": "^2.0.7",
     "@rollup/plugin-commonjs": "^17.0.0",
     "@rollup/plugin-node-resolve": "^11.1.0",
+    "node-sass": "^5.0.0",
+    "nodemon": "^2.0.7",
+    "rimraf": "^3.0.2",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-css-only": "^3.1.0",
     "rollup-plugin-multi-input": "^1.2.0",
     "rollup-plugin-node-resolve": "^5.2.0",
-    "node-sass": "^5.0.0"
+    "rollup-plugin-scss": "^2.6.1"
   }
 }

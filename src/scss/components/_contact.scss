@@ -18,6 +18,8 @@
     left: calc((100vw - 100%) / -2);
     width: 100%;
     object-fit: contain;
+    opacity: 0;
+    transform: translateX(-90%);
 
     @media (min-width: $responsive) {
       left: calc((100vw - 90%) / -2);
