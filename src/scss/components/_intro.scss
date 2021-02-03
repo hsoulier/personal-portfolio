@@ -1,118 +1,119 @@
 .introduction {
-  $size: 20rem;
-  visibility: hidden;
-
-  @media (min-width: 768px) {
-    margin-top: 3rem;
-    height: 50vmin;
-    min-height: 420px;
-    height: auto;
-  }
-
-  &__container {
-    height: 100%;
+    z-index: -1;
+    $size: 20rem;
+    visibility: hidden;
 
     @media (min-width: 768px) {
-      display: flex;
-      justify-content: center;
-      column-gap: 3rem;
-    }
-  }
-
-  &__image {
-    position: relative;
-    height: $size;
-    width: $size;
-    // box-shadow: 4px 4px 6px rgba(0, 0, 0, .16);
-    border-radius: .75rem;
-
-    &-container {
-      overflow: hidden;
-      border-radius: .75rem;
-      position: absolute;
-      object-fit: cover;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+        margin-top: 3rem;
+        height: 50vmin;
+        min-height: 420px;
+        height: auto;
     }
 
-    @media (min-width: 769px) {
-      $sizeTablet: 28vmax;
-      width: $sizeTablet;
-      height: $sizeTablet;
-      flex-shrink: 0;
-      align-self: auto;
-      justify-self: auto;
+    &__container {
+        height: 100%;
+
+        @media (min-width: 768px) {
+            display: flex;
+            justify-content: center;
+            column-gap: 3rem;
+        }
     }
 
-    img {
-      object-fit: cover;
-      width: 100%;
-      height: 100%;
-    }
-  }
+    &__image {
+        position: relative;
+        height: $size;
+        width: $size;
+        // box-shadow: 4px 4px 6px rgba(0, 0, 0, .16);
+        border-radius: 0.75rem;
 
-  &__bonjour {
-    transform-origin: left top;
-    width: 21rem;
-    position: relative;
-    top: $size;
-    transform: translate(10%, -50%);
-    display: inline-block;
-    text-align: center;
-    font-size: 3.5rem;
-    padding: 1rem 2rem;
-    font-weight: 700;
-    background-color: rgba(233, 236, 239, 0.3);
-    box-shadow: 8px 8px 9px rgba(0, 0, 0, .16);
-    border-radius: 1.25rem;
-    backdrop-filter: blur(.75rem);
+        &-container {
+            overflow: hidden;
+            border-radius: 0.75rem;
+            position: absolute;
+            object-fit: cover;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
 
-    @media (min-width: 768px) {
-      top: 0;
-      transform: translate(75%, 15%);
-    }
-  }
+        @media (min-width: 769px) {
+            $sizeTablet: 28vmax;
+            width: $sizeTablet;
+            height: $sizeTablet;
+            flex-shrink: 0;
+            align-self: auto;
+            justify-self: auto;
+        }
 
-  &__description {
-    margin-top: 6rem;
-
-    &>* {
-      overflow: hidden;
-
-      span {
-        display: block;
-      }
+        img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
     }
 
-    @media (min-width: 768px) {
-      margin-top: 9rem;
-      width: 70%;
-      max-width: 550px;
+    &__bonjour {
+        transform-origin: left top;
+        width: 21rem;
+        position: relative;
+        top: $size;
+        transform: translate(10%, -50%);
+        display: inline-block;
+        text-align: center;
+        font-size: 3.5rem;
+        padding: 1rem 2rem;
+        font-weight: 700;
+        background-color: rgba(233, 236, 239, 0.3);
+        box-shadow: 8px 8px 9px rgba(0, 0, 0, 0.16);
+        border-radius: 1.25rem;
+        backdrop-filter: blur(0.75rem);
+
+        @media (min-width: 768px) {
+            top: 0;
+            transform: translate(75%, 15%);
+        }
     }
 
-    p {
-      margin-bottom: 2rem;
-      font-size: 1.2rem;
-      font-weight: 300;
-    }
-  }
+    &__description {
+        margin-top: 6rem;
 
-  &__cta {
-    padding: .5rem 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+        & > * {
+            overflow: hidden;
 
-    @media (min-width: 768px) {
-      justify-content: flex-start;
+            span {
+                display: block;
+            }
+        }
+
+        @media (min-width: 768px) {
+            margin-top: 9rem;
+            width: 70%;
+            max-width: 550px;
+        }
+
+        p {
+            margin-bottom: 2rem;
+            font-size: 1.2rem;
+            font-weight: 300;
+        }
     }
 
-    a {
-      font-weight: 600;
-      font-size: 1.5rem;
-      width: auto;
+    &__cta {
+        padding: 0.5rem 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @media (min-width: 768px) {
+            justify-content: flex-start;
+        }
+
+        a {
+            font-weight: 600;
+            font-size: 1.5rem;
+            width: auto;
+        }
     }
-  }
 }

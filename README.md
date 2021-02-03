@@ -3,9 +3,9 @@
 
 
 ## TODO
-- [] Home Page
+- [X] Home Page
   - [X] Hero section
-  - [] About section
+  - [X] About section
   - [X] Contact section
 
 - [X] Projects Page
