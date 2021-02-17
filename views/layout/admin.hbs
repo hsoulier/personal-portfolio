@@ -4,7 +4,6 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="/js/index.js" defer></script>
     <meta name="description"
       content="Hippolyte Soulier, développeur front-end orienté creative coding. Développeur Javascript">
     <meta name="keywords" content="Hippolye, Soulier, développeur, front-end, creative coding" />
@@ -12,13 +11,20 @@
     <meta name="copyright" content="© Tous droits réservé Hippolyte Soulier" />
     <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="/css/main.css">
-    <title>Portfolio | Hippolyte Soulier</title>
+    <script src="/js/admin.js" defer></script>
+    <title>Dashboard | Hippolyte Soulier</title>
   </head>
 
-  <body>
-    {{>navbar}}
+  <body class="admin-body">
+    <div class="admin-nav">
+      <h1>Bonjour,<br>{{login}}</h1>
+      <nav class="admin-nav__links">
+        <button class="admin-nav__link" data-link="project">Projets</button>
+        <button class="admin-nav__link" data-link="contact">Contact</button>
+        <button class="admin-nav__link" data-link="page">Page</button>
+      </nav>
+    </div>
     {{{body}}}
-    {{>footer}}
   </body>
 
 </html>

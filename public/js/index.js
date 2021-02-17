@@ -5197,9 +5197,9 @@ _forEachName("x,y,z,top,right,bottom,left,width,height,fontSize,padding,margin,p
 
 gsap.registerPlugin(CSSPlugin);
 
-var gsapWithCSS = gsap.registerPlugin(CSSPlugin) || gsap,
+var gsapWithCSS = gsap.registerPlugin(CSSPlugin) || gsap;
     // to protect from tree shaking
-TweenMaxWithCSS = gsapWithCSS.core.Tween;
+gsapWithCSS.core.Tween;
 
 var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
 
@@ -5214,7 +5214,7 @@ function createCommonjsModule(fn) {
 
 var ScrollTrigger = createCommonjsModule(function (module, exports) {
 (function (global, factory) {
-	 factory(exports) ;
+	factory(exports) ;
 }(commonjsGlobal, (function (exports) {
 	/*!
 	 * ScrollTrigger 3.6.0
@@ -12115,7 +12115,7 @@ function slidePrev(speed, runCallbacks, internal) {
   var normalizedSnapGrid = snapGrid.map(function (val) {
     return normalize(val);
   });
-  var currentSnap = snapGrid[normalizedSnapGrid.indexOf(normalizedTranslate)];
+  snapGrid[normalizedSnapGrid.indexOf(normalizedTranslate)];
   var prevSnap = snapGrid[normalizedSnapGrid.indexOf(normalizedTranslate) - 1];
 
   if (typeof prevSnap === 'undefined' && params.cssMode) {
@@ -14522,7 +14522,7 @@ let page = {
 
 // Slider swiperJS
 Swiper.use([Navigation$1]);
-const swiper = new Swiper(".swiper-container", {
+new Swiper(".swiper-container", {
     direction: "horizontal",
     slidesPerView: 1,
     spaceBetween: 50,

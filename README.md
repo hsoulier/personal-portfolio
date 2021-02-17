@@ -1,7 +1,6 @@
 # Portfolio
 2020 version of my personal portfolio  
 
-
 ## TODO
 - [X] Home Page
   - [X] Hero section
@@ -10,6 +9,8 @@
 
 - [X] Projects Page
   - [X] auto Slider
+
+- [X] 404 Page
 
 - [] Admin Pages
   - [X] Login form

@@ -2,18 +2,20 @@
 <p class="modal error-login">Mauvais identifiants</p>
 {{/if}}
 
-<form action="/admin/connect" method="post" class="form-admin">
-  <div class="form-row">
-    <div class="form-field">
-      <label for="name">Email</label>
-      <input type="email" name="email" id="name" placeholder="Entrer l'email">
+<main>
+  <form action="/admin/connect" method="post" class="form-admin">
+    <div class="form-row">
+      <div class="form-field">
+        <label for="name">Email</label>
+        <input type="email" name="email" id="name" placeholder="Entrer l'email">
+      </div>
     </div>
-  </div>
-  <div class="form-row">
-    <div class="form-field">
-      <label for="password">Mot de passe</label>
-      <input type="password" name="password" id="password" placeholder="Entrer le mot de passe">
+    <div class="form-row">
+      <div class="form-field">
+        <label for="password">Mot de passe</label>
+        <input type="password" name="password" id="password" placeholder="Entrer le mot de passe">
+      </div>
     </div>
-  </div>
-  <button type="submit" class="btn submit-button">Connexion</button>
-</form>
+    <button type="submit" class="btn submit-button">Connexion</button>
+  </form>
+</main>
