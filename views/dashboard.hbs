@@ -28,4 +28,18 @@
 
     {{/each}}
   </div>
+
+  <form class="project-card__form" method="post" action="/admin/project/new">
+    <input type="text" placeholder="Titre" name="title">
+    <div>
+      <input type="text" name="image" placeholder="Nom de l'image" />
+    </div>
+    <input type="text" name="subtitle" placeholder="subtitle">
+    <input type="text" name="stack" placeholder="stack">
+    <textarea name="description">description</textarea>
+    <input type="text" name="link" placeholder="link">
+    <div class="flex">
+      <button type="submit" class="btn">Ajouter un projet</button>
+    </div>
+  </form>
 </main>

@@ -4,8 +4,6 @@ const Contact = require("../model/Contact")
 const Page = require("../model/Page")
 const bcrypt = require("bcrypt")
 const { json } = require("body-parser")
-const multer = require("multer")
-const upload = multer({ dest: "public/img/project" })
 
 exports.login = async (req, res) => {
     const { email, password } = req.body
@@ -43,8 +41,17 @@ exports.deleteProject = async (req, res) => {
     res.redirect("/admin/dashboard")
 }
 exports.modifyProject = async (req, res) => {
-    upload.single("image")
-
-    console.log("Moodify this project: ", req.body)
+    res.redirect("/admin/dashboard")
+}
+exports.insertProject = (req, res) => {
+    console.log("Result: ", req.body)
+    const project = new Project(req.body)
+    project.save(function (err) {
+        if (err) {
+            console.error(err)
+            return
+        }
+        console.log("Project inserted")
+    })
     res.redirect("/admin/dashboard")
 }
