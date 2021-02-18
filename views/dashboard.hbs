@@ -2,8 +2,8 @@
   {{#if admin}}
   <h1>Vous êtes connecté</h1>
   {{/if}}
-
-  <div class="project-card">
+  <h3>Projets</h3>
+  <div class="project-card" id="projects">
     {{#each projects}}
     <div class="project-card__container">
       <form class="project-card__form" method="post" action="/admin/project/{{_id}}" enctype="multipart/form-data">
@@ -42,4 +42,11 @@
       <button type="submit" class="btn">Ajouter un projet</button>
     </div>
   </form>
+  <h3>Contact</h3>
+  <div class="contact-card" id="contact">
+    {{#each contacts}}
+    <div class="flex">From {{name}}, {{email}}</div>
+    <p>Message: {{message}}</p>
+    {{/each}}
+  </div>
 </main>

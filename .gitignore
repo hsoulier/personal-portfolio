@@ -124,3 +124,5 @@ dist
 !.vscode/extensions.json
 *.code-workspace
 
+# Testing Bcrypt
+test/

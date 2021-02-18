@@ -29,7 +29,8 @@ exports.dashboard = async (req, res, next) => {
         next()
     }
     const projects = await Project.find({})
-    res.render("dashboard", { layout: "admin", login, projects })
+    const contacts = await Contact.find({})
+    res.render("dashboard", { layout: "admin", login, projects, contacts })
 }
 exports.deleteProject = async (req, res) => {
     const id = req.params.id
