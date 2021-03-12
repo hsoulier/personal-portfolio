@@ -24,12 +24,12 @@ body {
   grid-template-rows: auto minmax(auto, 1fr) auto;
   position: relative; }
 
-*[class*="container"] {
+*[class*="__container"] {
   width: 80%;
   margin-left: auto;
   margin-right: auto; }
   @media (min-width: 768px) {
-    *[class*="container"] {
+    *[class*="__container"] {
       width: 85%; } }
 
 h1 {
@@ -159,7 +159,7 @@ button {
       pointer-events: none; }
       @supports not (backdrop-filter: blur(0.75rem)) {
         .nav__links {
-          background-color: #FFFFFF; } }
+          background-color: #ffffff; } }
       @supports not (row-gap: 1rem) {
         .nav__links > * + * {
           margin-top: 1rem; } }
@@ -304,7 +304,7 @@ button {
     backdrop-filter: blur(0.75rem); }
     @supports not (backdrop-filter: blur(0.75rem)) {
       .introduction__bonjour {
-        background-color: #FFFFFF; } }
+        background-color: #ffffff; } }
     @media (min-width: 768px) {
       .introduction__bonjour {
         width: 21rem;
@@ -413,58 +413,11 @@ button {
     width: auto;
     margin-right: auto; }
 
-.projects__container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between; }
-
-.projects__title {
-  font-size: 2.5rem; }
-
-.projects__project {
-  position: relative;
-  flex-grow: 0;
-  width: 100%;
-  height: 30rem;
-  display: flex;
-  justify-content: center;
-  align-items: center; }
-  @media (min-width: 768px) {
-    .projects__project {
-      width: calc(50% - 8rem); } }
-
-.projects__project-texts {
-  flex-shrink: 0;
-  height: 100%;
-  width: 60%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; }
-  .projects__project-texts h1 {
-    margin-bottom: 2rem; }
-  .projects__project-texts p {
-    margin-bottom: 1rem; }
-
-.projects img {
-  position: absolute;
-  width: 80%;
-  height: 80%;
-  top: 50%;
-  left: 50%;
-  z-index: -1;
-  filter: grayscale(70%);
-  transform: translate(-50%, -50%);
-  object-fit: contain; }
-
-.projects + .footer {
-  margin-top: 0; }
-
 .form-admin {
   margin: 2rem auto;
   padding: 1rem;
   max-width: 40rem;
-  background-color: #F8F9FA;
+  background-color: #f8f9fa;
   border-radius: .5rem;
   display: flex;
   flex-direction: column;
@@ -483,12 +436,75 @@ button {
 
 .btn {
   background-color: #212529;
-  color: #FFFFFF;
+  color: #ffffff;
   font-family: inherit;
   padding: 0.5rem 1.25rem;
   border-radius: 0.5rem;
   display: inline-flex;
   border: none; }
+
+.projects__inner-container {
+  overflow: hidden;
+  -ms-overflow-style: none;
+  scrollbar-width: none; }
+  .projects__inner-container ::-webkit-scrollbar {
+    display: none; }
+
+.projects__container {
+  overflow: scroll;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 10rem;
+  margin-bottom: 10rem; }
+  @supports not (column-gap: 6rem) {
+    .projects__container > * + * {
+      margin-top: 10rem; } }
+  @media (min-wdth: 950px) {
+    .projects__container {
+      width: 100%; } }
+
+.projects__title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 4rem; }
+
+.projects__project-wrapper {
+  flex-grow: 0;
+  flex-shrink: 1;
+  width: calc(50% - 5rem);
+  position: relative; }
+
+.projects__project {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #f8f9fa;
+  padding: 2rem;
+  border-radius: 1rem;
+  position: relative;
+  height: 30rem; }
+  .projects__project h2 {
+    font-weight: 700;
+    margin-bottom: 2rem; }
+  .projects__project p {
+    white-space: normal;
+    margin-bottom: 1rem; }
+
+.projects img {
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  top: 50%;
+  left: 50%;
+  z-index: -1;
+  filter: grayscale(70%);
+  transform: translate(-50%, -50%);
+  object-fit: contain; }
+
+.projects + .footer {
+  margin-top: 0; }
 
 * {
   margin: 0;
@@ -514,12 +530,12 @@ body {
   grid-template-rows: auto minmax(auto, 1fr) auto;
   position: relative; }
 
-*[class*="container"] {
+*[class*="__container"] {
   width: 80%;
   margin-left: auto;
   margin-right: auto; }
   @media (min-width: 768px) {
-    *[class*="container"] {
+    *[class*="__container"] {
       width: 85%; } }
 
 h1 {
@@ -603,7 +619,7 @@ button {
 .admin-nav {
   padding: 0.5rem;
   border-radius: 0.5rem;
-  background-color: #F8F9FA; }
+  background-color: #f8f9fa; }
   .admin-nav h1 {
     font-size: 2rem; }
   .admin-nav__links {

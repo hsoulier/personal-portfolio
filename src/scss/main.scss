@@ -11,11 +11,86 @@
 @import "./components/admin";
 
 .btn {
-    background-color: $black;
-    color: $white;
-    font-family: inherit;
-    padding: 0.5rem 1.25rem;
-    border-radius: 0.5rem;
-    display: inline-flex;
-    border: none;
+	background-color: $black;
+	color: $white;
+	font-family: inherit;
+	padding: 0.5rem 1.25rem;
+	border-radius: 0.5rem;
+	display: inline-flex;
+	border: none;
+}
+
+// TODO: Move to proper file
+.projects {
+	&__inner-container {
+		overflow: hidden;
+		-ms-overflow-style: none;
+		scrollbar-width: none;
+		::-webkit-scrollbar {
+			display: none;
+		}
+	}
+	&__container {
+		overflow: scroll;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		row-gap: 10rem;
+		@supports not (column-gap: 6rem) {
+			& > * + * {
+				margin-top: 10rem;
+			}
+		}
+		@media (min-wdth: $responsive) {
+			width: 100%;
+		}
+		margin-bottom: 10rem;
+	}
+	&__title {
+		font-size: 2.5rem;
+		text-align: center;
+		margin-bottom: 4rem;
+	}
+	&__project-wrapper {
+		flex-grow: 0;
+		flex-shrink: 1;
+		width: calc(50% - 5rem);
+		position: relative;
+	}
+	&__project {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		background-color: $light-white;
+		padding: 2rem;
+		border-radius: 1rem;
+		position: relative;
+
+		// max-width: 30rem;
+		height: 30rem;
+		h2 {
+			font-weight: 700;
+			margin-bottom: 2rem;
+		}
+		p {
+			white-space: normal;
+			margin-bottom: 1rem;
+		}
+	}
+	img {
+		position: absolute;
+		width: 80%;
+		height: 80%;
+		top: 50%;
+		left: 50%;
+		z-index: -1;
+		filter: grayscale(70%);
+		transform: translate(-50%, -50%);
+		object-fit: contain;
+	}
+
+	& + .footer {
+		margin-top: 0;
+	}
 }

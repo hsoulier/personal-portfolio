@@ -1,15 +1,20 @@
 <main data-scroll-container class="projects">
-  <div data-scroll-section class="projects__container">
-    <h1 class="projects__title">Certains de mes projets</h1>
-    {{#each projects as |project|}}
-    <div data-scroll data-scroll-speed="{{project.speed}}" class="projects__project">
-      <!-- <img src="/img/project/{{project.image}}" alt="{{project.title}}"> -->
-      <div class="projects__project-texts">
-        <h1>{{project.title}}</h1>
-        <p>{{project.description}}</p>
-        <a href="{{project.link}}" target="_blank" rel="noopener noreferrer" class="btn">Voir le site</a>
-      </div>
-    </div>
-    {{/each}}
-  </div>
+	<h1 class="projects__title">Certains de mes projets</h1>
+	<div class="projects__inner-container" style="overflow: hidden;">
+		<div data-scroll-section class="projects__wrapper">
+			<div class="projects__container" id="container">
+				{{#each projects as |project|}}
+					<div class="projects__project-wrapper">
+						<div data-scroll data-scroll-target="#container" data-scroll-speed="{{project.speed}}"
+							data-scroll-delay="{{project.delay}}" class="projects__project">
+							<h2>{{project.title}}</h2>
+							<p>{{project.description}}</p>
+							<a href="{{project.link}}" target="_blank" rel="noopener noreferrer" class="btn">Voir le
+								site</a>
+						</div>
+					</div>
+				{{/each}}
+			</div>
+		</div>
+	</div>
 </main>
