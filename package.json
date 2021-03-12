@@ -8,6 +8,7 @@
     "scripts": {
         "dev": "nodemon index.js",
         "sass": "node-sass -w src/scss -o public/css --output-style expanded",
+        "build:sass": "node-sass src/scss -o public/css --output-style compressed",
         "start": "node index.js",
         "build:watch": "rollup -c -w",
         "build": "NODE_ENV=production rollup -c",

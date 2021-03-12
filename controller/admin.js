@@ -10,11 +10,17 @@ exports.login = async (req, res) => {
     const user = await User.findOne({ email })
     const userPassword = user.password
     let username = user.email.substring(0, user.email.indexOf("@"))
-    const match = await bcrypt.compare(password, userPassword)
-    req.session.login = match ? username : null
-    match
-        ? res.redirect("/admin/dashboard")
-        : res.render("login-admin", { error: !match })
+    // let result = false
+    // bcrypt.compare(password, userPassword, (err, result) => {
+    //     result = true
+    // })
+    // const match = await bcrypt.compare(password, userPassword)
+    // req.session.login = match ? username : null
+    // match
+    //     ? res.redirect("/admin/dashboard")
+    //     : res.render("login-admin", { error: !match })
+
+    res.render("login-admin", { error: !match })
 }
 exports.form = (req, res) => {
     if (req.session.login) {
