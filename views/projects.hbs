@@ -1,28 +1,15 @@
-<main class="projects-slider">
-  <div class="swiper-container">
-    <div class="swiper-wrapper">
-      {{#each projects as |project|}}
-      <div class="swiper-slide">
-        <div class="swiper-slide-texts">
-          <h1>{{project.title}}</h1>
-          <h2>{{project.subtitle}}</h2>
-          <p>{{project.description}}</p>
-          <p class="stack">{{project.stack}}</p>
-          <a href="{{project.link}}" target="_blank" rel="noopener noreferrer" class="btn">Voir le site</a>
-        </div>
-        <div class="swiper-slide-image">
-          <img src="/img/project/{{project.image}}" alt="{{project.title}}">
-        </div>
+<main data-scroll-container class="projects">
+  <div data-scroll-section class="projects__container">
+    <h1 class="projects__title">Certains de mes projets</h1>
+    {{#each projects as |project|}}
+    <div data-scroll data-scroll-speed="{{project.speed}}" class="projects__project">
+      <!-- <img src="/img/project/{{project.image}}" alt="{{project.title}}"> -->
+      <div class="projects__project-texts">
+        <h1>{{project.title}}</h1>
+        <p>{{project.description}}</p>
+        <a href="{{project.link}}" target="_blank" rel="noopener noreferrer" class="btn">Voir le site</a>
       </div>
-      {{/each}}
     </div>
-  </div>
-  <div class="swiper-button">
-    <div class="swiper-button-prev">
-      <i data-feather="arrow-left"></i>
-    </div>
-    <div class="swiper-button-next">
-      <i data-feather="arrow-right"></i>
-    </div>
+    {{/each}}
   </div>
 </main>

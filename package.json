@@ -10,9 +10,8 @@
         "sass": "node-sass -w src/scss -o public/css --output-style expanded",
         "build:sass": "node-sass src/scss -o public/css --output-style compressed",
         "start": "node index.js",
-        "build:watch": "rollup -c -w",
-        "build": "NODE_ENV=production rollup -c",
-        "test": "nodemon test/test.js"
+        "watch": "rollup -c -w",
+        "build": "NODE_ENV=production rollup -c"
     },
     "dependencies": {
         "@handlebars/allow-prototype-access": "^1.0.3",
@@ -27,6 +26,7 @@
         "feather-icons": "^4.28.0",
         "gsap": "^3.6.0",
         "helmet": "^4.4.1",
+        "locomotive-scroll": "^4.1.0",
         "mongoose": "^5.11.13",
         "morgan": "^1.10.0",
         "swiper": "^6.4.8"

@@ -2,9 +2,8 @@ import "../scss/main.scss"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger"
 import feather from "feather-icons"
-import Swiper, { Navigation } from "swiper"
-import "swiper/swiper-bundle.css"
-
+import LocomotiveScroll from "locomotive-scroll"
+import "locomotive-scroll/dist/locomotive-scroll.min.css"
 gsap.registerPlugin(ScrollTrigger)
 
 // Page structure
@@ -14,19 +13,6 @@ let page = {
     navlinks: Array.from(document.querySelectorAll(".nav__links a")),
     contactForm: document.querySelector(".contact__form"),
 }
-
-// Slider swiperJS
-Swiper.use([Navigation])
-const swiper = new Swiper(".swiper-container", {
-    direction: "horizontal",
-    slidesPerView: 1,
-    spaceBetween: 50,
-    speed: 400,
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-    },
-})
 
 // Home Animations
 if (document.querySelector(".introduction")) {
@@ -81,7 +67,7 @@ if (document.querySelector(".introduction")) {
         scrollTrigger: ".contact__thumb",
         translateX: 0,
         opacity: 1,
-        duration: 2,
+        duration: .5,
     })
 }
 
@@ -138,3 +124,10 @@ page.burger.addEventListener("click", () => {
 
 // Loading Feather icons
 feather.replace()
+
+if (document.querySelector(".projects")) {
+    const scroll = new LocomotiveScroll({
+        el: document.querySelector("[data-scroll-container]"),
+        smooth: true,
+    })
+}
