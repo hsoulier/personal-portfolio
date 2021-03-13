@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -447,6 +446,7 @@ button {
 
 .projects__project {
   width: calc(100% - 1.5rem);
+  align-self: stretch;
   position: relative;
   border-radius: 1rem;
   box-shadow: 8px 8px 9px rgba(0, 0, 0, 0.16);
@@ -455,9 +455,8 @@ button {
   justify-content: center;
   flex-direction: column;
   background-color: #f8f9fa;
-  padding: 2rem;
   position: relative;
-  height: 24rem; }
+  padding: calc(8rem / 1.5) 2rem calc(8rem / 3); }
   @media (min-width: 768px) {
     .projects__project {
       width: calc(50% - 3rem); } }
@@ -519,109 +518,65 @@ input {
   display: inline-flex;
   border: none; }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box; }
+.projects__inner-container {
+  overflow: hidden;
+  -ms-overflow-style: none;
+  scrollbar-width: none; }
+  .projects__inner-container ::-webkit-scrollbar {
+    display: none; }
 
-a {
-  text-decoration: none;
-  color: inherit; }
+.projects__container {
+  overflow: scroll;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  row-gap: 5rem;
+  padding: calc(8rem / 2) 0; }
+  @supports not (row-gap: 5rem) {
+    .projects__container > * + * {
+      margin-top: 5rem; } }
 
-ul {
-  list-style: none; }
-
-html {
-  scroll-behavior: smooth; }
-
-body {
-  min-height: 100vh;
-  font: 16px "Open Sans", sans-serif;
-  color: #212529;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto minmax(auto, 1fr) auto;
-  position: relative; }
-
-*[class*="__container"] {
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto; }
-  @media (min-width: 768px) {
-    *[class*="__container"] {
-      width: 85%; } }
-
-h1 {
+.projects__title {
   font-size: 2.5rem;
-  font-weight: 700;
-  line-height: 1.2; }
+  text-align: center;
+  margin-bottom: 4rem; }
 
-h2 {
-  margin-top: 1rem;
-  font-weight: 500;
-  font-size: 2rem;
-  margin-bottom: 1.5rem; }
-
-p {
-  line-height: 1.5; }
-
-button {
-  background-color: transparent;
-  border: none; }
-
-.flex {
-  display: flex; }
-
-.form-row {
+.projects__project {
+  width: calc(100% - 1.5rem);
+  align-self: stretch;
+  position: relative;
+  border-radius: 1rem;
+  box-shadow: 8px 8px 9px rgba(0, 0, 0, 0.16);
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-direction: column;
-  row-gap: 1.5rem; }
-  @supports not (row-gap: 1rem) {
-    .form-row > * + * {
-      margin-top: 1.5rem; } }
-  @media (min-width: 950px) {
-    .form-row {
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: flex-start;
-      column-gap: clamp(20px, 3vw, 3.5rem); }
-      @supports not (column-gap: 1rem) {
-        .form-row > * + * {
-          margin-left: clamp(20px, 3vw, 3.5rem); } } }
+  background-color: #f8f9fa;
+  position: relative;
+  padding: calc(8rem / 1.5) 2rem calc(8rem / 3); }
+  @media (min-width: 768px) {
+    .projects__project {
+      width: calc(50% - 3rem); } }
+  @media (min-width: 1920px) {
+    .projects__project {
+      width: calc((100% / 3) - 3rem); } }
+  .projects__project h2 {
+    margin-top: 0;
+    font-weight: 700;
+    margin-bottom: 2rem; }
+  .projects__project p {
+    white-space: normal;
+    margin-bottom: 1rem; }
 
-.form-row-wide {
-  display: flex;
-  flex-direction: column; }
+.projects img {
+  position: absolute;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 999px;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  object-fit: cover; }
 
-.form-field input {
-  width: 100%; }
-
-label {
-  font-weight: 700;
-  font-size: 1.5rem; }
-
-input,
-textarea {
-  margin-top: 0.75rem;
-  padding: 0.75rem 1rem;
-  border-radius: 0.75rem;
-  border: 1px solid #222529;
-  font-size: 1rem;
-  font-family: inherit;
-  font-weight: 400;
-  background-color: transparent; }
-  input:focus,
-  textarea:focus {
-    outline: none;
-    border-width: 2px; }
-
-textarea {
-  display: block;
-  line-height: 1.5;
-  height: 12rem;
-  resize: vertical; }
-
-button {
-  cursor: pointer;
-  display: inline;
-  font-size: 1.25rem; }
+.projects + .footer {
+  margin-top: 0; }

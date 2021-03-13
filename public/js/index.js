@@ -7711,4 +7711,3 @@ page.burger.addEventListener("click", () => {
 });
 
 feather$1.replace();
-//# sourceMappingURL=index.js.map
