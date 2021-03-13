@@ -6,7 +6,6 @@ import json from "@rollup/plugin-json"
 import scss from "rollup-plugin-scss"
 const rimraf = require("rimraf")
 
-const prod = process.env.NODE_ENV === "production"
 rimraf("./public/js", () => {
     console.log("public/js removed")
 })

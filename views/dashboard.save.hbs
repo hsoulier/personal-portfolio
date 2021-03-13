@@ -1,0 +1,52 @@
+<main>
+  {{#if admin}}
+    <h1>Vous êtes connecté</h1>
+  {{/if}}
+  <h3>Projets</h3>
+  <div class="project-card" id="projects">
+    {{#each projects}}
+      <div class="project-card__container">
+        <form class="project-card__form" method="post" action="/admin/project/{{_id}}" enctype="multipart/form-data">
+          <input type="hidden" name="_id" value="{{_id}}">
+          <input type="text" value="{{title}}" name="title">
+          <div>
+            <input type="file" name="image" />
+            <img src="/img/project/{{image}}" alt="{{title}}">
+          </div>
+          <input type="text" name="subtitle" value="{{subtitle}}">
+          <input type="text" name="stack" value="{{stack}}">
+          <textarea name="description">{{description}}</textarea>
+          <input type="text" name="link" value="{{link}}">
+          <div class="flex">
+            <button type="submit" class="btn">Modifier</button>
+          </div>
+        </form>
+        <form method="get" action="/admin/project/{{_id}}">
+          <button class="btn" type="submit">Supprimer</button>
+        </form>
+      </div>
+
+    {{/each}}
+  </div>
+
+  <form class="project-card__form" method="post" action="/admin/project/new">
+    <input type="text" placeholder="Titre" name="title">
+    <div>
+      <input type="text" name="image" placeholder="Nom de l'image" />
+    </div>
+    <input type="text" name="subtitle" placeholder="subtitle">
+    <input type="text" name="stack" placeholder="stack">
+    <textarea name="description">description</textarea>
+    <input type="text" name="link" placeholder="link">
+    <div class="flex">
+      <button type="submit" class="btn">Ajouter un projet</button>
+    </div>
+  </form>
+  <h3>Contact</h3>
+  <div class="contact-card" id="contact">
+    {{#each contacts}}
+      <div class="flex">From {{name}}, {{email}}</div>
+      <p>Message: {{message}}</p>
+    {{/each}}
+  </div>
+</main>

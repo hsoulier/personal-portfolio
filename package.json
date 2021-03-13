@@ -8,14 +8,13 @@
     "scripts": {
         "dev": "nodemon index.js",
         "sass": "node-sass -w src/scss -o public/css --output-style expanded",
+        "build:sass": "node-sass src/scss -o public/css --output-style compressed",
         "start": "node index.js",
-        "build:watch": "rollup -c -w",
-        "build": "NODE_ENV=production rollup -c",
-        "test": "nodemon test/test.js"
+        "watch": "rollup -c -w",
+        "build": "NODE_ENV=production rollup -c"
     },
     "dependencies": {
         "@handlebars/allow-prototype-access": "^1.0.3",
-        "axios": "^0.21.1",
         "bcrypt": "^5.0.0",
         "body-parser": "^1.19.0",
         "dotenv": "^8.2.0",
@@ -28,7 +27,7 @@
         "helmet": "^4.4.1",
         "mongoose": "^5.11.13",
         "morgan": "^1.10.0",
-        "swiper": "^6.4.8"
+        "multer": "^1.4.2"
     },
     "devDependencies": {
         "@rollup/plugin-commonjs": "^17.0.0",

@@ -1,21 +1,17 @@
 # Portfolio
-2020 version of my personal portfolio  
+2021 version of my personal portfolio  
 
 ## TODO
-- [X] Home Page
-  - [X] Hero section
-  - [X] About section
-  - [X] Contact section
-
-- [X] Projects Page
-  - [X] auto Slider
-
-- [X] 404 Page
-
+### ADMIN
 - [] Admin Pages
   - [X] Login form
   - [X] Login DB
-  - [] Dashboard
-    - [] Form new project
-    - [] Insert new project DB
+  - [] Modify Project
+  - [X] Dashboard
+    - [X] Form new project
+    - [X] Insert new project DB
+  
 
+### FIX CSS
+- [X] Overflow intro section responsive
+- [X] About row gap
