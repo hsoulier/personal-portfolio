@@ -1,14 +1,16 @@
 # Portfolio
-2020 version of my personal portfolio  
+2021 version of my personal portfolio  
 
 ## TODO
 ### ADMIN
 - [] Admin Pages
   - [X] Login form
   - [X] Login DB
-  - [] Dashboard
-    - [] Form new project
-    - [] Insert new project DB
+  - [] Modify Project
+  - [X] Dashboard
+    - [X] Form new project
+    - [X] Insert new project DB
+  
 
 ### FIX CSS
 - [X] Overflow intro section responsive
