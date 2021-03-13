@@ -3,10 +3,10 @@
 
 ## TODO
 ### ADMIN
-- [] Admin Pages
+- [ ] Admin Pages
   - [X] Login form
   - [X] Login DB
-  - [] Modify Project
+  - [ ] Modify Project
   - [X] Dashboard
     - [X] Form new project
     - [X] Insert new project DB
