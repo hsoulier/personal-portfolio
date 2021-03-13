@@ -1,72 +1,71 @@
 $black: #212529;
-$dark-gray:#222529;
-$white: #FFFFFF;
-$light-white: #F8F9FA;
+$dark-gray: #222529;
+$white: #ffffff;
+$light-white: #f8f9fa;
 $light-gray: #656c74;
 $responsive: 950px;
 $gap: 1.5rem;
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 a {
-  text-decoration: none;
-  color: inherit;
+	text-decoration: none;
+	color: inherit;
 }
 
 ul {
-  list-style: none;
+	list-style: none;
 }
 
 html {
-  scroll-behavior: smooth;
+	scroll-behavior: smooth;
 }
 
 body {
-  min-height: 100vh;
-  font: 16px "Open Sans", sans-serif;
-  color: $black;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto minmax(auto, 1fr) auto;
-  position: relative;
+	min-height: 100vh;
+	font: 16px "Open Sans", sans-serif;
+	color: $black;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto minmax(auto, 1fr) auto;
+	position: relative;
 }
 
+*[class*="__container"] {
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
 
-*[class*="container"] {
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-
-  @media (min-width: 768px) {
-    width: 85%;
-  }
+	@media (min-width: 768px) {
+		width: 85%;
+	}
 }
 
 h1 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  line-height: 1.2;
+	font-size: 2.5rem;
+	font-weight: 700;
+	line-height: 1.2;
 }
 
 h2 {
-  margin-top: 1rem;
-  font-weight: 500;
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
+	margin-top: 1rem;
+	font-weight: 500;
+	font-size: 2rem;
+	margin-bottom: 1.5rem;
 }
 p {
-  line-height: 1.5;
+	line-height: 1.5;
 }
 
 button {
-  background-color: transparent;
-  border: none;
+	background-color: transparent;
+	border: none;
 }
 
 .flex {
-  display: flex;
+	display: flex;
 }
