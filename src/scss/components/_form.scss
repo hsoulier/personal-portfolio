@@ -1,6 +1,6 @@
 .form {
 	&-row {
-		display: flex;
+		display: grid;
 		flex-direction: column;
 		row-gap: $gap;
 		@supports not (row-gap: 1rem) {
@@ -10,7 +10,8 @@
 		}
 
 		@media (min-width: $responsive) {
-			flex-direction: row;
+			
+			grid-template-columns: auto auto;
 			justify-content: space-between;
 			align-items: flex-start;
 			column-gap: clamp(20px, 3vw, 3.5rem);

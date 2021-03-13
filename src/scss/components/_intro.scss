@@ -15,7 +15,8 @@
         height: 100%;
 
         @media (min-width: 768px) {
-            display: flex;
+            display: grid;
+            grid-template-columns: auto auto;
             justify-content: center;
             column-gap: 3rem;
             @supports not (column-gap: 3rem) {
