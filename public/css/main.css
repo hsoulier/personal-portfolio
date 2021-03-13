@@ -464,9 +464,6 @@ input {
   @supports not (column-gap: 6rem) {
     .projects__container > * + * {
       margin-top: 10rem; } }
-  @media (min-wdth: 950px) {
-    .projects__container {
-      width: 100%; } }
 
 .projects__title {
   font-size: 2.5rem;
@@ -474,7 +471,7 @@ input {
   margin-bottom: 4rem; }
 
 .projects__project {
-  width: calc(50% - 3rem);
+  width: calc(100% - 1.5rem);
   position: relative;
   border-radius: 1rem;
   box-shadow: 8px 8px 9px rgba(0, 0, 0, 0.16);
@@ -486,7 +483,14 @@ input {
   padding: 2rem;
   position: relative;
   height: 24rem; }
+  @media (min-width: 768px) {
+    .projects__project {
+      width: calc(50% - 3rem); } }
+  @media (min-width: 1920px) {
+    .projects__project {
+      width: calc((100% / 3) - 3rem); } }
   .projects__project h2 {
+    margin-top: 0;
     font-weight: 700;
     margin-bottom: 2rem; }
   .projects__project p {
@@ -606,50 +610,3 @@ button {
   cursor: pointer;
   display: inline;
   font-size: 1.25rem; }
-
-.admin-body {
-  height: 100vh;
-  min-height: 650px;
-  display: grid;
-  grid-template-columns: 12rem auto;
-  grid-template-rows: 1fr;
-  gap: 2rem;
-  padding: 1rem; }
-
-.admin-nav {
-  padding: 0.5rem;
-  border-radius: 0.5rem;
-  background-color: #f8f9fa; }
-  .admin-nav h1 {
-    font-size: 2rem; }
-  .admin-nav__links {
-    gap: 0.5rem;
-    margin-top: 2rem;
-    display: flex;
-    flex-direction: column; }
-
-.project-card {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start; }
-  .project-card__container {
-    width: 45%;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    background-color: whitesmoke; }
-  .project-card__form {
-    display: flex;
-    flex-direction: column;
-    row-gap: 1rem; }
-    .project-card__form img {
-      width: 100%;
-      object-fit: contain;
-      height: 8rem; }
-  .project-card input,
-  .project-card textarea {
-    border-radius: 0;
-    padding: 0.2rem;
-    border: none;
-    border-bottom: 1px solid #212529; }
-  .project-card .flex {
-    justify-content: space-between; }

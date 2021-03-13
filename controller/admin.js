@@ -1,16 +1,13 @@
 const User = require("../model/User")
 const Project = require("../model/Project")
 const Contact = require("../model/Contact")
-const Page = require("../model/Page")
 const bcrypt = require("bcrypt")
-const { json } = require("body-parser")
 
 exports.login = async (req, res) => {
 	const { email, password } = req.body
 	const user = await User.findOne({ email })
 	let username = user.email.substring(0, user.email.indexOf("@"))
 	bcrypt.compare(password, user.password, (err, result) => {
-		console.log(result)
 		req.session.login = result ? username : undefined
 		return result
 			? res.redirect("/admin/dashboard")
@@ -35,7 +32,7 @@ exports.dashboard = async (req, res, next) => {
 }
 exports.deleteProject = async (req, res) => {
 	const id = req.params.id
-	console.log("Delete this project:", id)
+	console.log("Delete the project:", id)
 	Project.deleteOne({ _id: id }, (err) => {
 		if (err) console.log(err)
 		console.log("Successful deletion")
@@ -48,8 +45,6 @@ exports.modifyProject = async (req, res) => {
 exports.insertProject = (req, res) => {
 	const { title, description, subtitle, stack, link } = req.body
 	const { filename } = req.file
-	console.log({ body: req.body, File: req.file })
-
 	const project = new Project({
 		title,
 		description,

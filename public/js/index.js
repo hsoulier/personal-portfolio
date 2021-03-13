@@ -7708,14 +7708,5 @@ page.burger.addEventListener("click", () => {
 	toggleDirection(tlNavbar);
 });
 
-// Loading Feather icons
 feather$1.replace();
-
-// if (document.querySelector(".projects")) {
-// 	const scroll = new LocomotiveScroll({
-// 		el: document.querySelector("[data-scroll-container]"),
-// 		smooth: true,
-// 		direction: "vertical",
-// 	})
-// }
 //# sourceMappingURL=index.js.map
