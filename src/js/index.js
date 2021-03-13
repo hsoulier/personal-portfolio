@@ -1,4 +1,5 @@
 import "../scss/main.scss"
+import "./supportCSS.js"
 import { gsap } from "gsap"
 import feather from "feather-icons"
 

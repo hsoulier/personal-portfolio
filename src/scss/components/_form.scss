@@ -1,58 +1,68 @@
 .form {
-    &-row {
-        display: flex;
-        flex-direction: column;
-        row-gap: $gap;
+	&-row {
+		display: flex;
+		flex-direction: column;
+		row-gap: $gap;
+		@supports not (row-gap: 1rem) {
+			& > * + * {
+				margin-top: $gap;
+			}
+		}
 
-        @media (min-width: $responsive) {
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: flex-start;
-            column-gap: clamp(20px, 3vw, 3.5rem);
-        }
-    }
+		@media (min-width: $responsive) {
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: flex-start;
+			column-gap: clamp(20px, 3vw, 3.5rem);
+            @supports not (column-gap: 1rem) {
+                & > * + * {
+                    margin-left: clamp(20px, 3vw, 3.5rem);
+                }
+            }
+		}
+	}
 
-    &-row-wide {
-        display: flex;
-        flex-direction: column;
-    }
+	&-row-wide {
+		display: flex;
+		flex-direction: column;
+	}
 
-    &-field input {
-        width: 100%;
-    }
+	&-field input {
+		width: 100%;
+	}
 }
 
 label {
-    font-weight: 700;
-    font-size: 1.5rem;
+	font-weight: 700;
+	font-size: 1.5rem;
 }
 
 input,
 textarea {
-    margin-top: .75rem;
-    padding: .75rem 1rem;
-    border-radius: .75rem;
-    border: 1px solid $dark-gray;
-    font-size: 1rem;
-    font-family: inherit;
-    font-weight: 400;
-    background-color: transparent;
+	margin-top: 0.75rem;
+	padding: 0.75rem 1rem;
+	border-radius: 0.75rem;
+	border: 1px solid $dark-gray;
+	font-size: 1rem;
+	font-family: inherit;
+	font-weight: 400;
+	background-color: transparent;
 
-    &:focus {
-        outline: none;
-        border-width: 2px;
-    }
+	&:focus {
+		outline: none;
+		border-width: 2px;
+	}
 }
 
 textarea {
-    display: block;
-    line-height: 1.5;
-    height: 12rem;
-    resize: vertical;
+	display: block;
+	line-height: 1.5;
+	height: 12rem;
+	resize: vertical;
 }
 
 button {
-    cursor: pointer;
-    display: inline;
-    font-size: 1.25rem;
+	cursor: pointer;
+	display: inline;
+	font-size: 1.25rem;
 }

@@ -15,9 +15,9 @@
 		justify-content: space-around;
 		row-gap: 5rem;
 		padding: calc(#{$size} / 2) 0;
-		@supports not (column-gap: 6rem) {
+		@supports not (row-gap: 5rem) {
 			& > * + * {
-				margin-top: 10rem;
+				margin-top: 5rem;
 			}
 		}
 	}
