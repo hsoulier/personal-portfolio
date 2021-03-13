@@ -1,10 +1,6 @@
 import "../scss/main.scss"
 import { gsap } from "gsap"
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger"
 import feather from "feather-icons"
-import LocomotiveScroll from "locomotive-scroll"
-import "locomotive-scroll/dist/locomotive-scroll.min.css"
-gsap.registerPlugin(ScrollTrigger)
 
 // Page structure
 let page = {
@@ -63,12 +59,6 @@ if (document.querySelector(".introduction")) {
 			},
 			"-=.3"
 		)
-	gsap.to(page.contact.thumb, {
-		scrollTrigger: ".contact__thumb",
-		translateX: 0,
-		opacity: 1,
-		duration: 0.5,
-	})
 }
 
 // Menu Open Animation
@@ -125,10 +115,10 @@ page.burger.addEventListener("click", () => {
 // Loading Feather icons
 feather.replace()
 
-if (document.querySelector(".projects")) {
-	const scroll = new LocomotiveScroll({
-		el: document.querySelector("[data-scroll-container]"),
-		smooth: true,
-		direction: "vertical",
-	})
-}
+// if (document.querySelector(".projects")) {
+// 	const scroll = new LocomotiveScroll({
+// 		el: document.querySelector("[data-scroll-container]"),
+// 		smooth: true,
+// 		direction: "vertical",
+// 	})
+// }
