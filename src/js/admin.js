@@ -1,4 +1,4 @@
-import "../scss/admin/index.scss"
+// import "../scss/admin/index.scss"
 const linkNav = document.querySelectorAll(".admin-nav__link")
 console.log("Hello admin")
 

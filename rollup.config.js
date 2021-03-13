@@ -6,6 +6,11 @@ import json from "@rollup/plugin-json"
 import scss from "rollup-plugin-scss"
 const rimraf = require("rimraf")
 
+
+const mode = process.env.NODE_ENV !== "production"
+
+console.log(mode)
+
 rimraf("./public/js", () => {
     console.log("public/js removed")
 })
@@ -16,7 +21,7 @@ rimraf("./public/css", () => {
 export default {
     input: ["src/js/*.js"],
     output: {
-        sourcemap: true,
+        sourcemap: mode,
         format: "esm",
         dir: "public",
     },
